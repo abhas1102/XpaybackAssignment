@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="userDetailsForDetailScreen"
+            type="com.example.xpaybackassignment.model.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".DetailActivity">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/userImage"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:imageUrl="@{userDetailsForDetailScreen.image}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/userFirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="@{userDetailsForDetailScreen.firstName.toString()}"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@id/userImage"
+            app:layout_constraintStart_toStartOf="parent"/>
+        <TextView
+            android:id="@+id/userLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="@{userDetailsForDetailScreen.lastName.toString()}"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@id/userImage"
+            app:layout_constraintStart_toEndOf="@id/userFirstName"/>
+        <TextView
+            android:id="@+id/textBirthDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="Birthdate: "
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@id/userFirstName"
+            app:layout_constraintStart_toStartOf="@id/userFirstName"/>
+
+        <TextView
+            android:id="@+id/valueBirthDate"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_height="wrap_content"
+            android:text="@{userDetailsForDetailScreen.birthDate.toString()}"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@id/userLastName"
+            app:layout_constraintStart_toEndOf="@id/textBirthDate"/>
+
+        <TextView
+            android:id="@+id/textBloodGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="Blood Group: "
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@id/textBirthDate"
+            app:layout_constraintStart_toStartOf="@id/userFirstName"/>
+
+        <TextView
+            android:id="@+id/valueBloodGroup"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_height="wrap_content"
+            android:text="@{userDetailsForDetailScreen.bloodGroup.toString()}"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@id/valueBirthDate"
+            app:layout_constraintStart_toEndOf="@id/textBloodGroup"/>
+
+        <TextView
+            android:id="@+id/textGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="Gender: "
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@id/textBloodGroup"
+            app:layout_constraintStart_toStartOf="@id/userFirstName"/>
+
+        <TextView
+            android:id="@+id/valueGender"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_height="wrap_content"
+            android:text="@{userDetailsForDetailScreen.gender.toString()}"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@id/valueBloodGroup"
+            app:layout_constraintStart_toEndOf="@id/textGender"/>
+
+        <TextView
+            android:id="@+id/textHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="Height: "
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@id/textGender"
+            app:layout_constraintStart_toStartOf="@id/userFirstName"/>
+
+        <TextView
+            android:id="@+id/valueHeight"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(userDetailsForDetailScreen.height)}"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@id/valueGender"
+            app:layout_constraintStart_toEndOf="@id/textGender"/>
+
+        <TextView
+            android:id="@+id/textWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="Weight: "
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@id/textHeight"
+            app:layout_constraintStart_toStartOf="@id/userFirstName"/>
+
+        <TextView
+            android:id="@+id/valueWeight"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(userDetailsForDetailScreen.weight)}"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@id/textHeight"
+            app:layout_constraintStart_toEndOf="@id/textWeight"/>
+
+        <TextView
+            android:id="@+id/textAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="Address: "
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@id/textWeight"
+            app:layout_constraintStart_toStartOf="@id/userFirstName"/>
+
+        <TextView
+            android:id="@+id/valueAddressCity"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_height="wrap_content"
+            android:text="@{userDetailsForDetailScreen.address.city.toString() + `,` + userDetailsForDetailScreen.address.postalCode.toString()}"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@id/valueWeight"
+            app:layout_constraintStart_toEndOf="@id/textAddress"/>
+
+
+
+
+
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
